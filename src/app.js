@@ -17,9 +17,9 @@ const PORT = process.env.PORT || 3000;
 // Creating directory path only for partials
 const hbs = require("hbs");
 const path = require("path");
-const publicDirectoryPath = path.join(__dirname, "../public");
-const viewDirectoryPath = path.join(__dirname, "../template/views");
-const partialDirectoryPath = path.join(__dirname, "../template/partial");
+const publicDirectoryPath = path.join(__dirname, "./public");
+const viewDirectoryPath = path.join(__dirname, "./template/views");
+const partialDirectoryPath = path.join(__dirname, "./template/partial");
 app.use(express.static(publicDirectoryPath)); // using css and js
 
 // setting up express properties
