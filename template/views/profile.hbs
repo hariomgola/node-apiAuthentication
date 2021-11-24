@@ -13,7 +13,8 @@
     <h1> Hi {{user.name}}</h1>
     <h5> Email - {{user.email}}</h5>
     <img src="{{user.picture}}">
-    <a href="/logout">Sign-out</a>
+    {{!-- <a href="/logout">Sign-out</a> --}}
+    <a href="/logout" class="logoutBtn" style="vertical-align:middle"><span>Logout </span></a>
     {{>footer}}
 </body>
 
