@@ -15,7 +15,46 @@
 
 <body>
     {{>header}}
-    <h1> {{page}} of Application</h1>
+    <h1> {{page}} of Application</h1><br>
+    <h5> Prerequire</h5>
+    <pre>
+        - node
+        - npm
+        - mongoDB
+        - chrome
+    </pre><br>
+    <h5> Handler Available</h5>
+    <pre>
+        - http://localhost:3000          - Default - Entry point of Application
+        - http://localhost:3000/login    - Login into the Application
+        - http://localhost:3000/logout   - Logout from the Application
+        - http://localhost:3000/profile  - Able to see the login profile (Only access after Authentication)
+        - http://localhost:3000/private  - Able yo see the private message (Onbly access after Authentication)
+        - http://localhost:3000/abc      - Handler expression handling with the help of express
+    </pre><br>
+
+    <h5> File Structure</h5>
+    <pre>
+        - app.js                         - Entry point of the Application
+        - db                             - Contain file to connect to mongoose
+        - authentication                 - Contain file for authentication to use as a express middleware
+        - env                            - Contain enviourment varaible to run project locally (will delete after a while)
+        - model                          - Contain user model to structure data before going into mongoDB
+        - public                         - Contain css and client javascript file to use on runtime
+        - template                       - Contains the Dynamic template to run the application on runtime
+    </pre><br>
+
+    <h5> Library used</h5>
+    <pre>
+        - chalk                         - Printing data into colourfull format in console
+        - nodemon                       - NodeMonster to use in local it automatically loads the data without shutting down the application
+        - express                       - Use to create Server
+        - cookie-parser                 - Use to get access to cookies
+        - dotenv                        - Use to get the env port running
+        - hbs                           - Use to get the Render the Dynamic Template
+        - open                          - Use to open the chrome application when application start
+        - mongoose                      - Use to insert data into mongoDB
+    </pre><br>
     {{>footer}}
 </body>
 
