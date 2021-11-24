@@ -26,6 +26,7 @@
     "google-auth-library": "^7.10.2",
     "hbs": "^4.2.0",
     "mongoose": "^6.0.13",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "open": "^8.4.0"
   }
 }

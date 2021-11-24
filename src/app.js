@@ -6,6 +6,8 @@ const chalk = require("chalk");
 const cookieParser = require("cookie-parser");
 const auth = require("./authentication/auth");
 const User = require("./model/user");
+const open = require("open");
+open("http://localhost:3000", { app: "chrome" });
 
 // connecting to db
 require("./db/mongoose");

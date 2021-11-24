@@ -7,6 +7,8 @@
     - dotenv
     - hbs
     - npm install google-auth-library --save
+    - open
+    - mongoose
 
   # Google Oauth Credential is Required
    - https://console.cloud.google.com/
