@@ -5,6 +5,10 @@ const express = require("express");
 const chalk = require("chalk");
 const cookieParser = require("cookie-parser");
 const auth = require("./authentication/auth");
+const User = require("./model/user");
+
+// connecting to db
+require("./db/mongoose");
 
 // Defining const variable
 const app = express();
@@ -50,8 +54,6 @@ app.post("/login", async (req, res) => {
   let token = req.body.token;
   console.log(chalk.yellow(` |>_  Token from Request ${token}`));
   try {
-    // let authData = await auth.verify(token);
-    // console.log(authData);
     // sending cookier and response back
     res.cookie("session-token", token);
     res.status(200).send("success");
@@ -78,6 +80,18 @@ app.get("/profile", auth, (req, res) => {
     copyright,
     ApplicationName: "Dashboard",
   });
+
+  // DB save
+  try {
+    let _user = new User({
+      name: user.name,
+      email: user.email,
+    });
+    let Result = _user.save();
+    console.log(chalk.green(` |>_ Save Data into DB Successfull`));
+  } catch (e) {
+    console.log(chalk.blue(` |>_ Error with saving the Data`));
+  }
 });
 
 //  -- authentication check -- //
